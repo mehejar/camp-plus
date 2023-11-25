@@ -1,0 +1,63 @@
+[
+    {
+      "name": "HealthCheck 2023",
+      "image": "https://img.freepik.com/free-photo/men-uniform-smiling-looking-camera_651396-1112.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1697587200&semt=ais",
+      "fee": 45,
+      "date": "2023-12-15",
+      "location": "City Park Community Center",
+      "specialized_services": ["General Check-ups", "Dental Care"],
+      "professionals_attend": ["General Physicians", "Dentists"],
+      "audience": "All Ages"
+    },
+    {
+      "name": "HeartCare Initiative",
+      "image": "https://img.freepik.com/premium-photo/healthcare-consultation-male-doctor-talking-patient-about-diagnosis-clinic-professional-discussion-mature-medical-worker-discussion-with-man-medicare-hospital_590464-183864.jpg",
+      "fee": 79,
+      "date": "2023-11-28",
+      "location": "Sunrise Hospital",
+      "specialized_services": ["Cardiology Consultation", "Heart Health Screening"],
+      "professionals_attend": ["Cardiologists", "Nurses"],
+      "audience": "Adults (Age 30+)"
+    },
+    {
+      "name": "Kids Wellness Day",
+      "image": "https://img.freepik.com/premium-photo/handsome-doctor-portrait-background_488220-35388.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699142400&semt=ais",
+      "fee": 49,
+      "date": "2024-01-10",
+      "location": "Sunset Community Center",
+      "specialized_services": ["Pediatric Consultation", "Immunization"],
+      "professionals_attend": ["Pediatricians", "Vaccination Specialists"],
+      "audience": "Children (Age 0-12)"
+    },
+    {
+      "name": "Women's Health Forum",
+      "image": "https://img.freepik.com/premium-photo/photo-young-professional-medical-team-hospital-doctors-meeting-doctors-with-patients_763111-60060.jpg",
+      "fee": 99,
+      "date": "2023-12-03",
+      "location": "Liberty Medical Center",
+      "specialized_services": ["Obstetrics & Gynecology", "Breast Cancer Screening"],
+      "professionals_attend": ["OB-GYN Specialists", "Mammography Technicians"],
+      "audience": "Women (Age 18+)"
+    },
+    {
+      "name": "Senior Care Symposium",
+      "image": "https://img.freepik.com/free-photo/young-girl-pediatrician-s-office-physical-examination_23-2149187484.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699315200&semt=ais",
+      "fee": 43,
+      "date": "2024-02-05",
+      "location": "Evergreen Retirement Community Hall",
+      "specialized_services": ["Geriatric Consultation", "Fall Risk Assessment"],
+      "professionals_attend": ["Geriatricians", "Physical Therapists"],
+      "audience": "Seniors (Age 65+)"
+    },
+    {
+      "name": "Mental Health Awareness Day",
+      "image": "https://img.freepik.com/free-photo/little-girl-with-teddy-bear-toy-doctor-s-appointment_23-2149187427.jpg",
+      "fee": 64,
+      "date": "2023-11-30",
+      "location": "Tranquil Minds Clinic",
+      "specialized_services": ["Psychological Counseling", "Stress Management Workshops"],
+      "professionals_attend": ["Psychiatrists", "Counselors"],
+      "audience": "All Ages"
+    }
+  ]
+  
