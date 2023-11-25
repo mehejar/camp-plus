@@ -8,6 +8,8 @@ export default {
     extend: {
       colors: {
         'theme-color': '#1D9EFF',
+        'theme-bg': '#F1F8FE',
+
       }
     },
   },
