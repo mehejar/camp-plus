@@ -1,4 +1,5 @@
 import Navbar from "../../Shared/Navbar/Navbar"
+import CampDetails from "../../Shared/Sections/CampDetails"
 import Banner from "./Banner"
 import PopularCamp from "./PopularCamp"
 
@@ -7,6 +8,7 @@ const Home = () =>{
         <div className="">
             <Banner></Banner>
             <PopularCamp></PopularCamp>
+            <CampDetails></CampDetails>
             
         </div>
     )

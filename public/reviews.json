@@ -1,0 +1,32 @@
+[
+    {
+      "review_id": 1,
+      "name": "Sarah Thompson",
+      "comment": "I had an incredible experience at this place. The staff was exceptionally courteous and attentive. The food was not only delicious but also beautifully presented. The ambiance was charming and relaxing, making it a perfect spot for a delightful evening. I highly recommend it!",
+      "location": "Los Angeles, USA"
+    },
+    {
+      "review_id": 2,
+      "name": "Jack Wilson",
+      "comment": "I cannot say enough good things about this establishment! From the moment I walked in, I was greeted with warmth and hospitality. The menu offered a diverse range of options, and every dish I tried was bursting with flavors. The attention to detail in the service and the cozy atmosphere made it an unforgettable dining experience. I'll definitely be returning soon!",
+      "location": "Sydney, Australia"
+    },
+    {
+      "review_id": 3,
+      "name": "Sophie Müller",
+      "comment": "This place exceeded all my expectations. The quality of service was outstanding, and the staff went above and beyond to ensure we had a wonderful time. The menu was extensive, catering to various preferences, and the taste of the dishes was simply divine. The ambiance was elegant yet comfortable, creating a perfect setting for a memorable evening with friends. I would highly recommend it to anyone visiting the area!",
+      "location": "Berlin, Germany"
+    },
+    {
+      "review_id": 4,
+      "name": "Lucas Chen",
+      "comment": "I was thoroughly impressed with everything about this place. The attention to detail in both service and food quality was remarkable. Each course was a delight to the senses, and the presentation was exceptional. The atmosphere was inviting and sophisticated, making it an ideal choice for a special occasion. I will absolutely be coming back and recommending it to friends!",
+      "location": "Tokyo, Japan"
+    },
+    {
+      "review_id": 5,
+      "name": "Elena Petrov",
+      "comment": "From the moment I stepped in, I felt transported to a culinary paradise. The service was impeccable, and the flavors in each dish were a testament to the chef's expertise. The ambiance was both cozy and elegant, providing a perfect backdrop for an evening of delightful dining. I can't wait to visit again and explore more of their menu!",
+      "location": "Moscow, Russia"
+    }
+  ]
