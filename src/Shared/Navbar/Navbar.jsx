@@ -10,7 +10,7 @@ const Navbar = () => {
     const navLinks = <>
 
         <NavLink to='/'><li><a>Home</a></li></NavLink>
-        <NavLink to='/orderFood/salad'><li><a>Order Food</a></li></NavLink>
+        <NavLink to='/available-camps'><li><a>Available Camps</a></li></NavLink>
         <NavLink to='/dashboard'><li><a>Dashboard</a></li></NavLink>
         <NavLink to='/menu'><li><a>Our Menu</a></li></NavLink>
         <NavLink><button className="py-2 px-4 rounded-md text-white bg-theme-color">Login</button></NavLink>

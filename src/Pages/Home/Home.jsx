@@ -8,7 +8,6 @@ const Home = () =>{
         <div className="">
             <Banner></Banner>
             <PopularCamp></PopularCamp>
-            <CampDetails></CampDetails>
             
         </div>
     )

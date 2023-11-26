@@ -1,13 +1,16 @@
 import { useState } from "react"
 import SectionHEading from "../../Shared/Sections/SectionHeading"
 import CampCard from "../../Shared/Sections/CampCart"
+import useCamps from "../../Hooks/useCamps"
 
 const PopularCamp = () =>{
-    const [popularCamps, setPopularCamps] = useState([])
 
-    fetch('popular-camp.json')
-    .then(res => res.json())
-    .then(data => setPopularCamps(data))
+    // fetch('popular-camp.json')
+    // .then(res => res.json())
+    // .then(data => setPopularCamps(data))
+
+    const camps = useCamps()
+    // console.log("Here is your data",camps)
 
     return(
         <div className="mt-16">
@@ -17,7 +20,7 @@ const PopularCamp = () =>{
             ></SectionHEading>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {
-                popularCamps.map(camp => <CampCard camp={camp}></CampCard>)
+                camps.map(camp => <CampCard camp={camp}></CampCard>)
             }
             </div>
         </div>
