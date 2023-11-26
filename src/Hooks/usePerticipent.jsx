@@ -6,14 +6,14 @@ const usePerticipent = () =>{
 
     const axiosPublic = useAxiosPublic()
     const camps = useCamps()
-        const { refetch, data: perticipent = [] } = useQuery({
-            queryKey: ['perticipent', camps?._id],
-            queryFn: async () => {
-                const res = await axiosPublic.get(`/campRegisters?campsId=${camps._id}`)
-                return res.data
-            },
-    
-        })
+    const { data: perticipent = [] } = useQuery({
+        queryKey: ['perticipent', _id],
+        queryFn: async () => {
+            const res = await axiosPublic.get(`/campRegisters?campsId=${_id}`)
+            return res.data
+        },
+
+    })
     
         return [perticipent,  refetch]
     }

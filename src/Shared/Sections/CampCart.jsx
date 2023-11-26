@@ -39,7 +39,7 @@ const CampCard = ({ camp }) => {
             <h2 className="text-3xl py-2 font-bold ">{name}</h2>
             <div className="flex justify-between py-2">
                 <button className="bg-slate-50 text-sm font-semibold rounded-md py-1 px-4 flex items-center gap-2"><BsFillCalendarDateFill></BsFillCalendarDateFill>{date}</button>
-                <button className=" text-xl font-semibold rounded-md py-1 px-4 flex items-center gap-1"><MdEditDocument></MdEditDocument>Joined:{perticipent.length}</button>
+                <button className=" text-xl font-semibold rounded-md py-1 px-4 flex items-center gap-1"><MdEditDocument></MdEditDocument>Joined: {perticipent.length}</button>
             </div>
             <h2 className="text-lg font-semibold flex items-center gap-2 my-2">Professionals Attend: {professionals_attend[0]}, {professionals_attend[1]} {professionals_attend[2]}</h2>
             <p className="text-small-text">{specialized_services[0]}, {specialized_services[1]}</p>

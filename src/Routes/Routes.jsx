@@ -5,6 +5,7 @@ import Main from "../Layouts/Main/Main";
 import Home from "../Pages/Home/Home";
 import CampDetails from "../Shared/Sections/CampDetails";
 import AvailableCamps from "../Pages/Available Camp/AvailableCamps";
+import Dashboard from "../Layouts/Dashboard/Dashboard";
 
    export const router = createBrowserRouter([
     {
@@ -26,4 +27,13 @@ import AvailableCamps from "../Pages/Available Camp/AvailableCamps";
         }
       ]
     },
+    {
+      path: '/dashboard',
+      element: <Dashboard></Dashboard>,
+      children:[
+        {
+
+        }
+      ]
+    }
   ]);
