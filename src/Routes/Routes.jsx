@@ -8,6 +8,10 @@ import AvailableCamps from "../Pages/Available Camp/AvailableCamps";
 import Dashboard from "../Layouts/Dashboard/Dashboard";
 import Login from "../Pages/Authentication/Login";
 import SignUp from "../Pages/Authentication/SIgnUp";
+import PrivateRoute from "./PrivateRoute";
+import Profile from "../OrganizerDashboard/Pages/Profile/Profile";
+import AddCamps from "../OrganizerDashboard/Pages/AddCamps/AddCamps";
+import ManageCamps from "../OrganizerDashboard/Pages/ManageCamps/ManageCamps";
 
    export const router = createBrowserRouter([
     {
@@ -20,7 +24,7 @@ import SignUp from "../Pages/Authentication/SIgnUp";
         },
         {
           path: '/camp-details/:id',
-          element: <CampDetails></CampDetails>,
+          element: <PrivateRoute><CampDetails></CampDetails></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/camps/${params.id}`)
         },
         {
@@ -42,7 +46,16 @@ import SignUp from "../Pages/Authentication/SIgnUp";
       element: <Dashboard></Dashboard>,
       children:[
         {
-
+          path: 'organizer-profile',
+          element: <Profile></Profile>
+        },
+        {
+          path: 'add-a-camp',
+          element: <AddCamps></AddCamps>
+        },
+        {
+          path: 'manage-camps',
+          element: <ManageCamps></ManageCamps>
         }
       ]
     }

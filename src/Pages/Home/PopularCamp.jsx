@@ -8,6 +8,7 @@ const PopularCamp = () =>{
     // fetch('popular-camp.json')
     // .then(res => res.json())
     // .then(data => setPopularCamps(data))
+    // sort((a, b) => new Date(b.time.createdAt) - new Date(a.time.createdAt))
 
     const camps = useCamps()
     // console.log("Here is your data",camps)
@@ -20,7 +21,7 @@ const PopularCamp = () =>{
             ></SectionHEading>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {
-                camps.map(camp => <CampCard camp={camp}></CampCard>)
+                camps.slice(0, 6).map(camp => <CampCard camp={camp}></CampCard>)
             }
             </div>
         </div>

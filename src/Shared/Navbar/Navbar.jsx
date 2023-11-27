@@ -1,8 +1,18 @@
 import { NavLink } from "react-router-dom"
 import logo from '../../assets/Logo/campPlus-02.png'
+import { useContext } from "react"
+import { AuthContext } from "../../Pages/Providers.jsx/AuthProvider"
 
 const Navbar = () => {
-    // console.log(user.displayName)
+
+    const {user, logOut} = useContext(AuthContext)
+
+    const handleLogOut = () =>{
+        logOut()
+    }
+
+    console.log(user)
+
 
    
 
@@ -13,7 +23,14 @@ const Navbar = () => {
         <NavLink to='/available-camps'><li><a>Available Camps</a></li></NavLink>
         <NavLink to='/dashboard'><li><a>Dashboard</a></li></NavLink>
         <NavLink to='/menu'><li><a>Contact Us</a></li></NavLink>
-        <NavLink to="/login" className="py-2 px-4 rounded-md text-white bg-theme-color">Login</NavLink>
+        {
+            user ? <>
+            <NavLink to="" onClick={handleLogOut} className="py-2 mr-4 px-4 rounded-md text-white bg-theme-color">Sign Out</NavLink>
+
+            <img className="w-[40px] rounded-full h-[40px]" src={user.photoURL} alt="" />
+            
+            </> : <NavLink to="/login" className="py-2 px-4 rounded-md text-white bg-theme-color">Login</NavLink>
+        }
         
         
     </>

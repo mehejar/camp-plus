@@ -13,7 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const CampDetails = () => {
 
-    const { register, handleSubmit } = useForm()
+    const { register, reset, handleSubmit } = useForm()
     const axiosPublic = useAxiosPublic()
     // ==============================
 
@@ -31,33 +31,32 @@ const CampDetails = () => {
     })
 
     const onSubmit = (data) => {
-        
-        const name = data.name
+
+        // Camp details 
+        const campsId = _id
+        const campsName = name
+        const campsDate = date
+        const campsLocation = location
+        const campsFee = fee
+
+
+        // Perticipent Details
+        const perticipentName = data.name
         const age = data.age
         const number = data.number
         const gender = data.gender
         const address = data.address
-        const campsId = _id
-        const registerInfo = {name, age, number, gender, address, campsId, fee}
+        
+
+        const registerInfo = {perticipentName, age, number, gender, address, campsId, campsFee, campsLocation, campsDate, campsName}
         // console.log(registerInfo)
 
         axiosPublic.post('/campRegisters', registerInfo)
         .then(data =>{
             console.log(data.data)
             refetch()
-        })
-        // fetch('http://localhost:5000/campRegisters', {
-        //     method: 'POST',
-        //     headers:{
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(registerInfo)
-        // })
-        // .then(res => res.json())
-        // .then(data =>{
-        //     console.log(data)
-        // })
-        
+            reset()
+        }) 
     }
 
     return (
