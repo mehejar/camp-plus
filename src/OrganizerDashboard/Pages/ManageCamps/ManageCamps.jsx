@@ -5,7 +5,7 @@ import ManageCampCard from "./managCampCard"
 
 const ManageCamps = () =>{
 
-    const {user} = useAuth()
+    const {user, loading} = useAuth()
     const organizer = user.email
     // console.log(organizer)
 
@@ -23,7 +23,8 @@ const ManageCamps = () =>{
         <div>
             
             {
-                camps.map((camp, idx) => <ManageCampCard idx={idx} camp={camp}></ManageCampCard>)
+                camps?.map((camp, idx) => 
+                <ManageCampCard idx={idx} camp={camp}></ManageCampCard>)
             }
         </div>
     )
