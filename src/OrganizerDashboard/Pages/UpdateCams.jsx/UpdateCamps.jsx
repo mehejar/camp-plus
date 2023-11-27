@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form"
 import { GiMedicalPack } from "react-icons/gi";
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
@@ -11,15 +13,29 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 const UpdateCamp = () => {
 
+    const camp = useLoaderData()
+    // console.log(camp)
+
+    const {_id, date,benifits,
+        fee,name,
+        location,
+        specialized_services,
+        professionals_attend} = camp
+
+      
+
     const {user} = useAuth()
     console.log(user)
 
     const { register, reset, handleSubmit } = useForm()
     const axiosPublic = useAxiosPublic()
 
-    const onSubmit = async (data, _id) => {
+    
+    console.log('Khujo', camp[0]._id)
 
-        const imageFile = { image: data.image[0] }
+    const onSubmit = async (data) => {
+
+        const imageFile = { image: data?.image[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
             headers: {
                 'content-type': 'multipart/form-data'
@@ -27,6 +43,8 @@ const UpdateCamp = () => {
         });
         // console.log(res.data);
         if (res.data.success) {
+
+            
 
             // const { name, image, date, fee, location, specialized_services, professionals_attend, audience } = camp;
         
@@ -41,14 +59,20 @@ const UpdateCamp = () => {
                 professionals_attend: data.professionals_attend,
                 audience: data.audience,
                 organizer: user.email
-
-
-
             }
+
             console.log(campsInfo)
-            const campsRes = await axiosPublic.put('/camps', campsInfo)
+            const campsRes = await axiosPublic.patch(`/camps/${camp[0]._id}`, campsInfo)
             console.log('Added', campsRes.data)
-            if (campsRes.data.insertedId) {
+            if (campsRes.data.modifiedCount > 0){
+
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 reset()
 
             }
@@ -70,9 +94,9 @@ const UpdateCamp = () => {
                         <label className="label">
                             <span className="label-text">Camp Name*</span>
                         </label>
-                        <input {...register("name")}
+                        <input defaultValue={name} {...register("date")}
                             type="text"
-                            placeholder="Camp Name"
+                           
                             className="input input-bordered w-full " />
                     </div>
                     <div className="flex gap-6">
@@ -82,7 +106,7 @@ const UpdateCamp = () => {
                                 <span className="label-text">Scheduled</span>
                             </label>
 
-                            <input {...register("date")}
+                            <input defaultValue={date} {...register("date")}
                                 type="date"
                                 placeholder="Schedule"
                                 className="input input-bordered w-full " />
@@ -92,7 +116,7 @@ const UpdateCamp = () => {
                             <label className="label">
                                 <span className="label-text">Fee*</span>
                             </label>
-                            <input {...register("price")}
+                            <input defaultValue={fee} {...register("price")}
                                 type="text"
                                 placeholder="Fee"
                                 className="input input-bordered w-full " />
@@ -104,7 +128,7 @@ const UpdateCamp = () => {
                             <label className="label">
                                 <span className="label-text">Venue Location*</span>
                             </label>
-                            <input {...register("location")}
+                            <input defaultValue={location} {...register("location")}
                                 type="text"
                                 placeholder="Apollo Hospital, New York,USA"
                                 className="input  input-bordered w-full " />
@@ -114,7 +138,7 @@ const UpdateCamp = () => {
                             <label className="label">
                                 <span className="label-text">Specialized Services*</span>
                             </label>
-                            <input {...register("specialized_services")}
+                            <input defaultValue={specialized_services} {...register("specialized_services")}
                                 type="text"
                                 placeholder="Specialized Services"
                                 className="input  input-bordered w-full " />
@@ -125,7 +149,7 @@ const UpdateCamp = () => {
                         <label className="label">
                             <span className="label-text">Professionals Attend*</span>
                         </label>
-                        <input {...register("professionals_attend")}
+                        <input defaultValue={professionals_attend} {...register("professionals_attend")}
                             type="text"
                             placeholder="Professionals Attend"
                             className="input input-bordered w-full " />
@@ -135,7 +159,7 @@ const UpdateCamp = () => {
                         <label className="label">
                             <span className="label-text">Benifits</span>
                         </label>
-                        <input {...register("benifits")}
+                        <input defaultValue={benifits} {...register("benifits")}
                             type="text"
                             placeholder="Explain Benifits"
                             className="input input-bordered w-full " />
@@ -156,7 +180,7 @@ const UpdateCamp = () => {
 
 
                     <div>
-                        <button type="submit" className="flex gap-2 items-center bg-white btn text-xl">Add A Camp<GiMedicalPack></GiMedicalPack></button>
+                        <button type="submit" className="flex gap-2 items-center bg-white btn text-xl">Update Camp<GiMedicalPack></GiMedicalPack></button>
                     </div>
                 </form>
             </div>

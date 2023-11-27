@@ -1,8 +1,13 @@
 import { RiEditBoxFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 
 const ManageCampCard = ({camp, idx}) => {
+
+    const axiosPublic = useAxiosPublic()
+
     const { _id,image,date,benifits,
         fee,name,
         location,
@@ -10,6 +15,26 @@ const ManageCampCard = ({camp, idx}) => {
         professionals_attend,
         audience,
         organizer} = camp
+
+        // console.log(camp)
+
+        const handleDelete = async() =>{
+            const campsdelete = await axiosPublic.delete(`/camps/${_id}`)
+            console.log('Added', campsdelete.data)
+            if (campsdelete.data.deletedCount > 0){
+
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                refetch()
+
+            }
+
+        }
 
         
        
@@ -62,7 +87,7 @@ const ManageCampCard = ({camp, idx}) => {
                                 <Link to={`/dashboard/update-camp/${_id}`}><button className=" p-2 rounded-2xl hover:text-theme-color text-2xl "><RiEditBoxFill ></RiEditBoxFill></button></Link>
                             </th>
                             <th>
-                                <button className="btn btn-ghost btn-xs">details</button>
+                                <button onClick={handleDelete} className="btn btn-ghost btn-xs">Delete</button>
                             </th>
                         </tr>
                         </tbody>
