@@ -54,6 +54,7 @@ const CampDetails = () => {
         const campsLocation = location
         const campsFee = fee
         const campOrganizer = organizer
+        const stutas = 'pending'
 
         
         
@@ -67,7 +68,7 @@ const CampDetails = () => {
         const address = data.address
         
 
-        const registerInfo = {perticipentName, campOrganizer, age, number, gender, address, campsId, campsFee, campsLocation, campsDate, campsName}
+        const registerInfo = {perticipentName, campOrganizer, age, number, gender, address, campsId, campsFee, campsLocation, campsDate, campsName, stutas}
         // console.log(registerInfo)
 
         axiosPublic.post('/campRegisters', registerInfo)

@@ -28,8 +28,8 @@ const RegisteredCamps = () => {
                 <h2 className="w-1/6">Name</h2>
                 <h2 className="w-1/6" >Camp</h2>
                 <h2 className="w-1/6">Venue</h2>
-                <h2 className="w-1/6">Schedule</h2>
-                <h2 className="w-1/6">Fee</h2>
+                <h2 className="w-[180px] text-center">Schedule</h2>
+                <h2 className="w-1/6 text-center">Fee</h2>
                 <div className="w-1/6">
                 <button className="">Payment</button>
                 </div>

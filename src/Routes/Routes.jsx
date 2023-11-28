@@ -14,6 +14,9 @@ import AddCamps from "../OrganizerDashboard/Pages/AddCamps/AddCamps";
 import ManageCamps from "../OrganizerDashboard/Pages/ManageCamps/ManageCamps";
 import UpdateCamp from "../OrganizerDashboard/Pages/UpdateCams.jsx/UpdateCamps";
 import RegisteredCamps from "../OrganizerDashboard/Pages/RegisteredCamps/RegisteredCamps";
+import PerticipentCamps from "../PerticipentDashboard/RegisteredCamps/RegisteredCamps";
+import PerticipentProfile from "../PerticipentDashboard/Profile/Profile";
+import UpdateProfile from "../PerticipentDashboard/Profile/UpdateProfile";
 
    export const router = createBrowserRouter([
     {
@@ -66,7 +69,21 @@ import RegisteredCamps from "../OrganizerDashboard/Pages/RegisteredCamps/Registe
         },
         {
           path: 'manage-registered-camps',
-          element:<RegisteredCamps></RegisteredCamps>
+          element:<PrivateRoute><RegisteredCamps></RegisteredCamps></PrivateRoute>
+        },
+        // Perticipents====================
+        {
+          path: 'registered-camps',
+          element: <PerticipentCamps></PerticipentCamps>
+        },
+        {
+          path: 'perticipent-profile',
+          element: <PrivateRoute><PerticipentProfile></PerticipentProfile></PrivateRoute>
+        },
+        {
+          path:'update-profile',
+          element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>,
+          
         }
       ]
     }

@@ -36,7 +36,7 @@ const CampCard = ({ camp }) => {
     // console.log('perticipent', perticipent)
 
     return (
-        <div className="bg-white p-8 rounded-lg">
+        <div className="bg-white p-3 rounded-lg">
             <img className="w-[450px] h-[300px] rounded-lg" src={image} alt="" />
             <h2 className="text-3xl py-2 font-bold ">{name}</h2>
             <div className="flex justify-between py-2">
