@@ -25,7 +25,7 @@ const Dashboard = () => {
 
                     <li><NavLink to="/dashboard/manage-camps"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><SiManageiq className="text-2xl"></SiManageiq>Manage Camp</button></NavLink></li>
 
-                    <li><NavLink to="/dashboard/organizer-profile"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><MdEditDocument className="text-2xl"></MdEditDocument>Registered Camps</button></NavLink></li>
+                    <li><NavLink to="/dashboard/manage-registered-camps"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><MdEditDocument className="text-2xl"></MdEditDocument>Registered Camps</button></NavLink></li>
 
                     <div className="divider"></div>
 

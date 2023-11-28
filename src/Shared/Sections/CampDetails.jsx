@@ -19,7 +19,20 @@ const CampDetails = () => {
 
         
     const camp = useLoaderData()
-    const { _id, name, image, date, fee, location, specialized_services, professionals_attend, audience } = camp;
+    // const { _id, name, image, date,  organizer, fee, location, specialized_services, professionals_attend, audience } = camp;
+
+    const name = camp[0].name
+    const image = camp[0].image
+    const date = camp[0].date
+    const organizer = camp[0].organizer
+    const fee = camp[0].fee
+    const location = camp[0].location
+    const specialized_services = camp[0].specialized_services
+    const professionals_attend = camp[0].professionals_attend
+    const audience = camp[0].audience
+    const _id = camp[0]._id
+
+    // console.log('erwer', camp[0].organizer)
 
     const { refetch, data: perticipent = [] } = useQuery({
         queryKey: ['perticipent', _id],
@@ -30,6 +43,8 @@ const CampDetails = () => {
 
     })
 
+    
+
     const onSubmit = (data) => {
 
         // Camp details 
@@ -38,6 +53,10 @@ const CampDetails = () => {
         const campsDate = date
         const campsLocation = location
         const campsFee = fee
+        const campOrganizer = organizer
+
+        
+        
 
 
         // Perticipent Details
@@ -48,7 +67,7 @@ const CampDetails = () => {
         const address = data.address
         
 
-        const registerInfo = {perticipentName, age, number, gender, address, campsId, campsFee, campsLocation, campsDate, campsName}
+        const registerInfo = {perticipentName, campOrganizer, age, number, gender, address, campsId, campsFee, campsLocation, campsDate, campsName}
         // console.log(registerInfo)
 
         axiosPublic.post('/campRegisters', registerInfo)
@@ -95,6 +114,7 @@ const CampDetails = () => {
                 <button className="bg-green-50 text-lg font-semibold rounded-md py-1 px-4 flex items-center gap-2">Audience: {audience}+</button>
             </div>
             <div className="w-3/4 mx-auto mt-8">
+                <p className="text-small-text">{specialized_services}</p>
                 <p className="text-small-text"><span className="font-semibold">Description of a Medical Camp: </span> Accessibility: Medical camps bring healthcare services closer to communities that may have limited access to hospitals or clinics due to geographical, financial, or other constraints.
 
                     Health Awareness: These camps often include educational sessions and workshops to raise awareness about various health issues, preventive measures, and healthy lifestyle practices.

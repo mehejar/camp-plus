@@ -33,6 +33,8 @@ const CampCard = ({ camp }) => {
 
     })
 
+    // console.log('perticipent', perticipent)
+
     return (
         <div className="bg-white p-8 rounded-lg">
             <img className="w-[450px] h-[300px] rounded-lg" src={image} alt="" />

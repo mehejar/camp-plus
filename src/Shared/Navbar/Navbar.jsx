@@ -11,7 +11,7 @@ const Navbar = () => {
         logOut()
     }
 
-    console.log(user)
+    // console.log(user)
 
 
    

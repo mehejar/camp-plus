@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form"
 import useAxiosPublic from "../../../Hooks/useAxiosPublic"
 import { GiMedicalPack } from "react-icons/gi";
 import useAuth from "../../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 
 const image_hosting_key = 'e4461ef5124ec2b2f2efc56f53ded9cb'
@@ -47,6 +48,11 @@ const AddCamps = () => {
             const campsRes = await axiosPublic.post('/camps', campsInfo)
             console.log('Added', campsRes.data)
             if (campsRes.data.insertedId) {
+                Swal.fire({
+                    title: "You Added A New Camp",
+                    text: "That thing is still around?",
+                    icon: "success"
+                  });
                 reset()
 
             }

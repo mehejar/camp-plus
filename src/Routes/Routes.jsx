@@ -13,6 +13,7 @@ import Profile from "../OrganizerDashboard/Pages/Profile/Profile";
 import AddCamps from "../OrganizerDashboard/Pages/AddCamps/AddCamps";
 import ManageCamps from "../OrganizerDashboard/Pages/ManageCamps/ManageCamps";
 import UpdateCamp from "../OrganizerDashboard/Pages/UpdateCams.jsx/UpdateCamps";
+import RegisteredCamps from "../OrganizerDashboard/Pages/RegisteredCamps/RegisteredCamps";
 
    export const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ import UpdateCamp from "../OrganizerDashboard/Pages/UpdateCams.jsx/UpdateCamps";
           path: 'update-camp/:id',
           element: <UpdateCamp></UpdateCamp>,
           loader: ({params}) => fetch(`http://localhost:5000/camps/${params.id}`)
+        },
+        {
+          path: 'manage-registered-camps',
+          element:<RegisteredCamps></RegisteredCamps>
         }
       ]
     }
