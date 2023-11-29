@@ -27,6 +27,8 @@ const UpdateProfile = () => {
     const name = profile[0]?.name
     const role = profile[0]?.role
     const email = profile[0]?.email
+    const bio = profile[0]?.bio
+    const about = profile[0]?.about
     
 
     const updateProfile = (e) => {
@@ -85,8 +87,8 @@ const UpdateProfile = () => {
                 </div>
                 <div className="divider lg:divider-horizontal"></div>
                 <div className=" w-1/4">
-                    <input type="text" name="bio" placeholder="Write here your bio" className="input border-2 border-theme-color w-full max-w-xs" />
-                    <input type="text" name="about" placeholder="Write here about you" className="input border-2 mt-5 border-theme-color w-full max-w-xs" />
+                    <input type="text" defaultValue={bio} name="bio" placeholder="Write here your bio" className="input border-2 border-theme-color w-full max-w-xs" />
+                    <input type="text" defaultValue={about} name="about" placeholder="Write here about you" className="input border-2 mt-5 border-theme-color w-full max-w-xs" />
                 </div>
                 <div className="relative bottom-44 left-12">
                     <button type="submit" className="text-lg bg-red-500 font-semibold px-3 py-2 text-white rounded-lg gap-2 flex items-center"><FaUserEdit></FaUserEdit> Confirm</button>

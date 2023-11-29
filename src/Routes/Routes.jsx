@@ -19,6 +19,9 @@ import PerticipentProfile from "../PerticipentDashboard/Profile/Profile";
 import UpdateProfile from "../PerticipentDashboard/Profile/UpdateProfile";
 import ProfessionalProfile from "../ProfessionalDashboard/ProfileManage/ProfessionalsProfile";
 import UpcomingCamps from "../Pages/UpcomingCamps/UpcomingCamps";
+import AddUpcomingCamps from "../OrganizerDashboard/Pages/AddCamps/AddUpcomingCamp";
+import UpcomingCampDetails from "../Shared/Sections/UpcomingCampDetail";
+import AcceptedCamp from "../ProfessionalDashboard/ProfileManage/AcceptedCamps";
 
    export const router = createBrowserRouter([
     {
@@ -33,6 +36,11 @@ import UpcomingCamps from "../Pages/UpcomingCamps/UpcomingCamps";
           path: '/camp-details/:id',
           element: <PrivateRoute><CampDetails></CampDetails></PrivateRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/camps/${params.id}`)
+        },
+        {
+          path: '/upcoming-camp-details/:id',
+          element: <PrivateRoute><UpcomingCampDetails></UpcomingCampDetails></PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/upcoming-camps/${params.id}`)
         },
         {
           path: '/available-camps',
@@ -69,6 +77,10 @@ import UpcomingCamps from "../Pages/UpcomingCamps/UpcomingCamps";
           element: <ManageCamps></ManageCamps>
         },
         {
+          path: 'add-upcoming-camps',
+          element: <AddUpcomingCamps></AddUpcomingCamps>
+        },
+        {
           path: 'update-camp/:id',
           element: <UpdateCamp></UpdateCamp>,
           loader: ({params}) => fetch(`http://localhost:5000/camps/${params.id}`)
@@ -94,6 +106,10 @@ import UpcomingCamps from "../Pages/UpcomingCamps/UpcomingCamps";
         {
           path: 'professionals-profile',
           element: <PrivateRoute><ProfessionalProfile></ProfessionalProfile></PrivateRoute>
+        },
+        {
+          path: 'accepted-camps',
+          element: <PrivateRoute><AcceptedCamp></AcceptedCamp></PrivateRoute>
         }
       ]
     }

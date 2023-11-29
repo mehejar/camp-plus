@@ -22,7 +22,7 @@ const RegisteredCamps = () => {
     return (
         <div>
             <h2 className="mt-5 ml-5 text-2xl font-semibold">All Registered List</h2>
-             <div className="divider"></div> 
+            <div className="divider"></div>
             <div className="flex py-2 px-3 rounded-lg  justify-evenly">
                 <h2 className="w-[50px] mx-5 font-semibold text-theme-color">#</h2>
                 <h2 className="w-1/6">Name</h2>
@@ -31,12 +31,12 @@ const RegisteredCamps = () => {
                 <h2 className="w-[180px] text-center">Schedule</h2>
                 <h2 className="w-1/6 text-center">Fee</h2>
                 <div className="w-1/6">
-                <button className="">Payment</button>
+                    <button className="">Payment</button>
                 </div>
                 <div className="w-1/6">
-                <button className="">Joining</button>
+                    <button className="">Joining</button>
                 </div>
-                
+
             </div>
             {
                 registered.map((register, idx) => <>

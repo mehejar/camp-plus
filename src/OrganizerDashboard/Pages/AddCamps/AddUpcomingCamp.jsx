@@ -4,6 +4,7 @@ import { GiMedicalPack } from "react-icons/gi";
 import useAuth from "../../../Hooks/useAuth";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import Swal from "sweetalert2";
+import DashboardHeading from "../../../Shared/Sections/DashboardHeading";
 
 
 const image_hosting_key = 'e4461ef5124ec2b2f2efc56f53ded9cb'
@@ -67,6 +68,7 @@ const AddUpcomingCamps = () => {
 
     return (
         <div>
+            <DashboardHeading heading="Add Upcoming Camps"></DashboardHeading>
 
             <div className="w-2/4 mx-auto">
                 <form className="" onSubmit={handleSubmit(onSubmit)}>

@@ -38,6 +38,8 @@ const useProfile = () => {
     const role = profile[0]?.role
     const email = profile[0]?.email
     const _id = profile[0]?._id
+    const about = profile[0]?.about
+    const bio = profile[0]?.bio
 
 
     return (
@@ -45,7 +47,10 @@ const useProfile = () => {
             <h2 className="text-2xl pt-8 pl-8 font-bold">Edit Profile</h2>
             <div className="divider"></div>
             <div className="p-20 m-8 bg-white rounded-3xl border-2 border-opacity-10 border-theme-color flex gap-8 items-center">
+                <div>
                 <img className="rounded-full bg-theme-color p-2 w-[300px] h-[300px]" src={photo} alt="" />
+                <p className="text-center mt-2"> ID: {_id}</p>
+                </div>
                 <div className="w-1/4">
                     <h2 className="text-5xl font-bold">{name}</h2>
                     <button className="px-4 font-semibold my-3 py-2 rounded-full bg-theme-color text-white">{role}</button>
@@ -54,8 +59,8 @@ const useProfile = () => {
                 </div>
                 <div className="divider lg:divider-horizontal"></div>
                 <div className=" w-1/4">
-                    <h2>Bio: <br /><span className="font-semibold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span> </h2>
-                    <h2 className="mt-5"><span className="font-semibold">About me:</span>  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</h2>
+                    <h2>Bio: <br /><span className="font-semibold">{bio}</span> </h2>
+                    <h2 className="mt-5"><span className="font-semibold">About me:</span> {about}</h2>
                 </div>
                 <div className="relative bottom-44 left-12">
                     <Link to={'/dashboard/update-profile'}><button className="text-xl font-semibold px-3 py-2 flex items-center"><FaUserEdit></FaUserEdit> Update Profile</button></Link>

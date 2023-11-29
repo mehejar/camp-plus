@@ -11,10 +11,12 @@ const ManageCamps = () =>{
 
     const [camps, setCamps] = useState([])
     const axiosPublic = useAxiosPublic()
+    
     axiosPublic.get(`/organizer-camps?organizer=${organizer}`)
     .then(data =>{
         // console.log(data.data)
         setCamps(data.data)
+        
     })
 
     // console.log(camps)

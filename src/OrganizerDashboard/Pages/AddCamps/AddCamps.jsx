@@ -4,6 +4,8 @@ import { GiMedicalPack } from "react-icons/gi";
 import useAuth from "../../../Hooks/useAuth";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import Swal from "sweetalert2";
+import DashboardHeading from "../../../Shared/Sections/DashboardHeading";
+import { Link } from "react-router-dom";
 
 
 const image_hosting_key = 'e4461ef5124ec2b2f2efc56f53ded9cb'
@@ -67,8 +69,11 @@ const AddCamps = () => {
 
     return (
         <div>
+            <div>
+                <DashboardHeading heading="Add Camps"></DashboardHeading>
+            </div>
 
-            <div className="w-2/4 mx-auto">
+            <div className="w-2/4 mx-auto my-5">
                 <form className="" onSubmit={handleSubmit(onSubmit)}>
 
 
@@ -174,9 +179,10 @@ const AddCamps = () => {
                     <div className="flex gap-5">
                         <button type="submit" className="flex gap-2 items-center bg-white btn text-xl">Add A Camp<GiMedicalPack></GiMedicalPack></button>
 
-                        <button type="submit" className="flex gap-2 items-center bg-white btn text-xl">Upcoming Camps<BsFillCalendarDateFill></BsFillCalendarDateFill></button>
+                        <Link to='/dashboard/add-upcoming-camps'><button className="flex gap-2 items-center bg-theme-color btn text-xl text-white">Upcoming Camps<BsFillCalendarDateFill></BsFillCalendarDateFill></button></Link>
                     </div>
                 </form>
+                
             </div>
         </div>
     )
