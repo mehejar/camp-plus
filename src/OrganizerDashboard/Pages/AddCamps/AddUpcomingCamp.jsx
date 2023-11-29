@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const image_hosting_key = 'e4461ef5124ec2b2f2efc56f53ded9cb'
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 
-const AddCamps = () => {
+const AddUpcomingCamps = () => {
 
     const {user} = useAuth()
     console.log(user)
@@ -30,7 +30,7 @@ const AddCamps = () => {
 
             // const { name, image, date, fee, location, specialized_services, professionals_attend, audience } = camp;
         
-            const campsInfo = {
+            const upcomingCamps = {
                 name: data.name,
                 image: res.data.data.display_url,
                 date: data.date,
@@ -46,13 +46,13 @@ const AddCamps = () => {
 
 
             }
-            console.log(campsInfo)
-            const campsRes = await axiosPublic.post('/camps', campsInfo)
+            console.log(upcomingCamps)
+            const campsRes = await axiosPublic.post('/upcoming-camps', upcomingCamps)
             console.log('Added', campsRes.data)
             if (campsRes.data.insertedId) {
                 Swal.fire({
-                    title: "You Added A New Camp",
-                    text: "That thing is still around?",
+                    title: "You Added A New Upcoming Camp",
+                    text: "You Added a Upcoming Camp",
                     icon: "success"
                   });
                 reset()
@@ -172,7 +172,6 @@ const AddCamps = () => {
 
 
                     <div className="flex gap-5">
-                        <button type="submit" className="flex gap-2 items-center bg-white btn text-xl">Add A Camp<GiMedicalPack></GiMedicalPack></button>
 
                         <button type="submit" className="flex gap-2 items-center bg-white btn text-xl">Upcoming Camps<BsFillCalendarDateFill></BsFillCalendarDateFill></button>
                     </div>
@@ -182,4 +181,4 @@ const AddCamps = () => {
     )
 }
 
-export default AddCamps
+export default AddUpcomingCamps

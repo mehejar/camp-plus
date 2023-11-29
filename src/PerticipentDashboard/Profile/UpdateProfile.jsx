@@ -6,6 +6,10 @@ import useAuth from "../../Hooks/useAuth"
 
 const UpdateProfile = () => {
 
+    const check = () =>{
+        console.log('click hocce')
+    }
+
     const axiosPublic = useAxiosPublic()
     const { user } = useAuth()
 
@@ -86,9 +90,11 @@ const UpdateProfile = () => {
                 </div>
                 <div className="relative bottom-44 left-12">
                     <button type="submit" className="text-lg bg-red-500 font-semibold px-3 py-2 text-white rounded-lg gap-2 flex items-center"><FaUserEdit></FaUserEdit> Confirm</button>
+                    
                 </div>
             </div>
             </form>
+            <button onClick={check} type="submit" className="text-lg bg-red-500 font-semibold px-3 py-2 text-white rounded-lg gap-2 flex items-center"><FaUserEdit></FaUserEdit> Check</button>
 
         </div>
     )

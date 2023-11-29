@@ -17,6 +17,8 @@ import RegisteredCamps from "../OrganizerDashboard/Pages/RegisteredCamps/Registe
 import PerticipentCamps from "../PerticipentDashboard/RegisteredCamps/RegisteredCamps";
 import PerticipentProfile from "../PerticipentDashboard/Profile/Profile";
 import UpdateProfile from "../PerticipentDashboard/Profile/UpdateProfile";
+import ProfessionalProfile from "../ProfessionalDashboard/ProfileManage/ProfessionalsProfile";
+import UpcomingCamps from "../Pages/UpcomingCamps/UpcomingCamps";
 
    export const router = createBrowserRouter([
     {
@@ -43,16 +45,20 @@ import UpdateProfile from "../PerticipentDashboard/Profile/UpdateProfile";
         {
           path: '/signup',
           element: <SignUp></SignUp>
+        },
+        {
+          path: '/upcoming-camps',
+          element: <UpcomingCamps></UpcomingCamps>
         }
       ]
     },
     {
       path: '/dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
           path: 'organizer-profile',
-          element: <Profile></Profile>
+          element: <PrivateRoute><Profile></Profile></PrivateRoute>
         },
         {
           path: 'add-a-camp',
@@ -84,6 +90,10 @@ import UpdateProfile from "../PerticipentDashboard/Profile/UpdateProfile";
           path:'update-profile',
           element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>,
           
+        },
+        {
+          path: 'professionals-profile',
+          element: <PrivateRoute><ProfessionalProfile></ProfessionalProfile></PrivateRoute>
         }
       ]
     }

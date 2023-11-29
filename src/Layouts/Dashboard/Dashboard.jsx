@@ -7,6 +7,9 @@ import { AiFillHome } from "react-icons/ai";
 import { IoWallet } from "react-icons/io5";
 import { FaCommentMedical } from "react-icons/fa6";
 import { MdVerifiedUser } from "react-icons/md";
+import useOrganizer from "../../Hooks/useOrganizer";
+import usePerticipentRoute from "../../Hooks/usePerticipentRoute";
+import useProfessional from "../../Hooks/useProfessional";
 
 
 
@@ -17,14 +20,17 @@ import { MdVerifiedUser } from "react-icons/md";
 
 const Dashboard = () => {
 
-    const isOrganizer = false;
-    const isPerticipent = false;
-    const isProfessional = true
+    const [isOrganizer, isOrganizerLoading] = useOrganizer()
+    const [isPerticipent, isPerticipentLoading] = usePerticipentRoute()
+    const [isProfessional, isProfessionalLoading] = useProfessional()
+    console.log(isOrganizer, isPerticipent, isProfessional)
+    // const isProfessional = true
+    if(isOrganizerLoading || isPerticipentLoading || isProfessionalLoading) return <p>loading...</p>
     return (
         <div className="flex">
             <div className="w-1/5 min-h-screen bg-white">
                 <img draggable="false" className="w-[200px] mx-8 mt-8" src={logo} alt="" />
-                { isOrganizer &&
+                {isOrganizer &&
                     <ul className="mx-16 mt-8">
 
                         <li><NavLink
@@ -41,49 +47,49 @@ const Dashboard = () => {
                         <li><NavLink to="/"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><AiFillHome className="text-2xl"></AiFillHome>Home</button></NavLink></li>
 
 
-                    </ul>
+                    </ul> 
                 }
                 {
                     isPerticipent &&
                     <ul className="mx-16 mt-8">
 
-                    <li><NavLink
-                        to="/dashboard/perticipent-profile"><button className=" w-full rounded-xl py-2 px-3 text-gray-500 hover:bg-theme-bg  text-xl flex gap-3 my-2 items-center bg-white text-left"><PiUserSwitchFill className="text-2xl"></PiUserSwitchFill>Profile</button></NavLink></li>
+                        <li><NavLink
+                            to="/dashboard/perticipent-profile"><button className=" w-full rounded-xl py-2 px-3 text-gray-500 hover:bg-theme-bg  text-xl flex gap-3 my-2 items-center bg-white text-left"><PiUserSwitchFill className="text-2xl"></PiUserSwitchFill>Profile</button></NavLink></li>
 
 
 
-                    <li><NavLink to="/dashboard/registered-camps"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><MdEditDocument className="text-2xl"></MdEditDocument>Registered Camps</button></NavLink></li>
+                        <li><NavLink to="/dashboard/registered-camps"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><MdEditDocument className="text-2xl"></MdEditDocument>Registered Camps</button></NavLink></li>
 
-                    <li><NavLink to="/dashboard/payment-history"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><IoWallet className="text-2xl"></IoWallet>Payment History</button></NavLink></li>
+                        <li><NavLink to="/dashboard/payment-history"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><IoWallet className="text-2xl"></IoWallet>Payment History</button></NavLink></li>
 
-                    <li><NavLink to="/dashboard/review"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><FaCommentMedical className="text-2xl"></FaCommentMedical>Feedback</button></NavLink></li>
+                        <li><NavLink to="/dashboard/review"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><FaCommentMedical className="text-2xl"></FaCommentMedical>Feedback</button></NavLink></li>
 
-                    <div className="divider"></div>
+                        <div className="divider"></div>
 
-                    <li><NavLink to="/"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><AiFillHome className="text-2xl"></AiFillHome>Home</button></NavLink></li>
+                        <li><NavLink to="/"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><AiFillHome className="text-2xl"></AiFillHome>Home</button></NavLink></li>
 
 
-                </ul>
+                    </ul>
                 }
                 {
                     isProfessional &&
                     <ul className="mx-16 mt-8">
 
-                    <li><NavLink
-                        to="/dashboard/professionals-profile"><button className=" w-full rounded-xl py-2 px-3 text-gray-500 hover:bg-theme-bg  text-xl flex gap-3 my-2 items-center bg-white text-left"><PiUserSwitchFill className="text-2xl"></PiUserSwitchFill>Profile</button></NavLink></li>
+                        <li><NavLink
+                            to="/dashboard/professionals-profile"><button className=" w-full rounded-xl py-2 px-3 text-gray-500 hover:bg-theme-bg  text-xl flex gap-3 my-2 items-center bg-white text-left"><PiUserSwitchFill className="text-2xl"></PiUserSwitchFill>Profile</button></NavLink></li>
 
 
 
-                    <li><NavLink to="/dashboard/accepted-camps"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><MdVerifiedUser className="text-2xl"></MdVerifiedUser>Registered Camps</button></NavLink></li>
-
-                    
-
-                    <div className="divider"></div>
-
-                    <li><NavLink to="/"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><AiFillHome className="text-2xl"></AiFillHome>Home</button></NavLink></li>
+                        <li><NavLink to="/dashboard/accepted-camps"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><MdVerifiedUser className="text-2xl"></MdVerifiedUser>Accepted Camps</button></NavLink></li>
 
 
-                </ul>
+
+                        <div className="divider"></div>
+
+                        <li><NavLink to="/"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><AiFillHome className="text-2xl"></AiFillHome>Home</button></NavLink></li>
+
+
+                    </ul>
                 }
 
 

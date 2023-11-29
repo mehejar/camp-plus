@@ -1,9 +1,8 @@
+import useProfile from "../../../Hooks/useProfile";
+
 const Profile = () =>{
-    return(
-        <div>
-Upadate porfile 
-        </div>
-    )
+    const organizerProfile = useProfile()
+    return organizerProfile
 }
 
 export default Profile;
