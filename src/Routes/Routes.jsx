@@ -74,7 +74,7 @@ import UpdateProfile from "../PerticipentDashboard/Profile/UpdateProfile";
         // Perticipents====================
         {
           path: 'registered-camps',
-          element: <PerticipentCamps></PerticipentCamps>
+          element: <PrivateRoute><PerticipentCamps></PerticipentCamps></PrivateRoute>
         },
         {
           path: 'perticipent-profile',

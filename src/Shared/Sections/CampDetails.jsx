@@ -9,6 +9,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import usePerticipent from "../../Hooks/usePerticipent";
 import useCamps from "../../Hooks/useCamps";
 import { useQuery } from "@tanstack/react-query";
+import useAuth from "../../Hooks/useAuth";
 
 
 const CampDetails = () => {
@@ -19,6 +20,7 @@ const CampDetails = () => {
 
         
     const camp = useLoaderData()
+    const {user} = useAuth()
     // const { _id, name, image, date,  organizer, fee, location, specialized_services, professionals_attend, audience } = camp;
 
     const name = camp[0].name
@@ -55,6 +57,7 @@ const CampDetails = () => {
         const campsFee = fee
         const campOrganizer = organizer
         const stutas = 'pending'
+        const email = user.email
 
         
         
@@ -68,7 +71,7 @@ const CampDetails = () => {
         const address = data.address
         
 
-        const registerInfo = {perticipentName, campOrganizer, age, number, gender, address, campsId, campsFee, campsLocation, campsDate, campsName, stutas}
+        const registerInfo = {perticipentName, email, campOrganizer, age, number, gender, address, campsId, campsFee, campsLocation, campsDate, campsName, stutas}
         // console.log(registerInfo)
 
         axiosPublic.post('/campRegisters', registerInfo)
