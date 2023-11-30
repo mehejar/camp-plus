@@ -3,7 +3,7 @@ import useAuth from "./useAuth";
 import axios from "axios";
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000', headers: {
+    baseURL: 'https://camp-plus-server.vercel.app', headers: {
         authorization:`Bearer ${localStorage.getItem('access-token')}`
     }
 })

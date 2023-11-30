@@ -6,7 +6,7 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 const ProfessionalsCard = ({ camp, idx }) => {
     const axiosPublic = useAxiosPublic()
 
-    console.log(register)
+    // console.log(register)
 
     const { email, campOrganizer, professionalname,   profession, campsId, campsFee, campsLocation, campsDate, campsName, stutas } = camp
 
@@ -46,7 +46,7 @@ const ProfessionalsCard = ({ camp, idx }) => {
     return (
         <div className="flex py-2 px-3 rounded-lg mx-5 bg-white mt-4 justify-evenly">
             <h2 className="w-[50px]">{idx + 1}</h2>
-            <h2 className="w-1/6 font-semibold">{perticipentName}</h2>
+            <h2 className="w-1/6 font-semibold">{professionalname}</h2>
             <h2 className="w-1/6 font-semibold text-gray-600" >{campsName}</h2>
             <h2 className="w-1/6 text-gray-500">{campsLocation}</h2>
             <h2 className="w-1/6 text-center text-gray-500">{campsDate}</h2>

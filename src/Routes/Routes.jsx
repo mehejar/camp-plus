@@ -38,12 +38,12 @@ import ProfessionalsInterests from "../OrganizerDashboard/Pages/ProfessionalsInt
         {
           path: '/camp-details/:id',
           element: <PrivateRoute><CampDetails></CampDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/camps/${params.id}`)
+          loader: ({params}) => fetch(`https://camp-plus-server.vercel.app/camps/${params.id}`)
         },
         {
           path: '/upcoming-camp-details/:id',
           element: <PrivateRoute><UpcomingCampDetails></UpcomingCampDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/upcoming-camps/${params.id}`)
+          loader: ({params}) => fetch(`https://camp-plus-server.vercel.app/upcoming-camps/${params.id}`)
         },
         {
           path: '/available-camps',
@@ -86,7 +86,7 @@ import ProfessionalsInterests from "../OrganizerDashboard/Pages/ProfessionalsInt
         {
           path: 'update-camp/:id',
           element: <OrganizerRoute><UpdateCamp></UpdateCamp></OrganizerRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/camps/${params.id}`)
+          loader: ({params}) => fetch(`https://camp-plus-server.vercel.app/camps/${params.id}`)
         },
         {
           path: 'manage-registered-camps',
