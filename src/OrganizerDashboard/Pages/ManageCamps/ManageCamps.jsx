@@ -2,6 +2,7 @@ import { useState } from "react"
 import useAxiosPublic from "../../../Hooks/useAxiosPublic"
 import useAuth from "../../../Hooks/useAuth"
 import ManageCampCard from "./managCampCard"
+import DashboardHeading from "../../../Shared/Sections/DashboardHeading"
 
 const ManageCamps = () =>{
 
@@ -23,6 +24,7 @@ const ManageCamps = () =>{
 
     return(
         <div>
+            <DashboardHeading heading="Manage Your Camps"></DashboardHeading>
             
             {
                 camps?.map((camp, idx) => 

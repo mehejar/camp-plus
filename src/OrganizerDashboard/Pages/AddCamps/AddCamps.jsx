@@ -115,7 +115,7 @@ const AddCamps = () => {
                             <label className="label">
                                 <span className="label-text">Venue Location*</span>
                             </label>
-                            <input {...register("location")}
+                            <input required {...register("location")}
                                 type="text"
                                 placeholder="Apollo Hospital, New York,USA"
                                 className="input  input-bordered w-full " />
@@ -125,7 +125,7 @@ const AddCamps = () => {
                             <label className="label">
                                 <span className="label-text">Specialized Services*</span>
                             </label>
-                            <input {...register("specialized_services")}
+                            <input required {...register("specialized_services")}
                                 type="text"
                                 placeholder="Specialized Services"
                                 className="input  input-bordered w-full " />
@@ -136,7 +136,7 @@ const AddCamps = () => {
                         <label className="label">
                             <span className="label-text">Professionals Attend*</span>
                         </label>
-                        <input {...register("professionals_attend")}
+                        <input required {...register("professionals_attend")}
                             type="text"
                             placeholder="Professionals Attend"
                             className="input input-bordered w-full " />
@@ -146,7 +146,7 @@ const AddCamps = () => {
                         <label className="label">
                             <span className="label-text">Targeted Audience*</span>
                         </label>
-                        <input {...register("targeted_audience")}
+                        <input required {...register("targeted_audience")}
                             type="text"
                             placeholder="Professionals Attend"
                             className="input input-bordered w-full " />
@@ -156,7 +156,7 @@ const AddCamps = () => {
                         <label className="label">
                             <span className="label-text">Benifits</span>
                         </label>
-                        <input {...register("benifits")}
+                        <input required {...register("benifits")}
                             type="text"
                             placeholder="Explain Benifits"
                             className="input input-bordered w-full " />
@@ -165,14 +165,14 @@ const AddCamps = () => {
                         <label className="label">
                             <span className="label-text">Description</span>
                         </label>
-                        <input {...register("description")}
+                        <input required {...register("description")}
                             type="text"
                             placeholder="Explain About "
                             className="input input-bordered w-full " />
                     </div>
 
                     <div className="my-6">
-                        <input {...register("image")} type="file" className="file-input max-w-md w-full border-2 border-theme-color" />
+                        <input required {...register("image")} type="file" className="file-input max-w-md w-full border-2 border-theme-color" />
                     </div>
 
 
@@ -188,4 +188,4 @@ const AddCamps = () => {
     )
 }
 
-export default AddCamps
+export default AddCamps;

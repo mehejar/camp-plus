@@ -22,6 +22,9 @@ import UpcomingCamps from "../Pages/UpcomingCamps/UpcomingCamps";
 import AddUpcomingCamps from "../OrganizerDashboard/Pages/AddCamps/AddUpcomingCamp";
 import UpcomingCampDetails from "../Shared/Sections/UpcomingCampDetail";
 import AcceptedCamp from "../ProfessionalDashboard/ProfileManage/AcceptedCamps";
+import ProfessionalRoute from "./ProfessionalsRoute";
+import OrganizerRoute from "./OrganizerRoute";
+import ProfessionalsInterests from "../OrganizerDashboard/Pages/ProfessionalsInterests/ProfessionalsInterests";
 
    export const router = createBrowserRouter([
     {
@@ -66,28 +69,32 @@ import AcceptedCamp from "../ProfessionalDashboard/ProfileManage/AcceptedCamps";
       children:[
         {
           path: 'organizer-profile',
-          element: <PrivateRoute><Profile></Profile></PrivateRoute>
+          element: <OrganizerRoute><Profile></Profile></OrganizerRoute>
         },
         {
           path: 'add-a-camp',
-          element: <AddCamps></AddCamps>
+          element: <OrganizerRoute><AddCamps></AddCamps></OrganizerRoute>
         },
         {
           path: 'manage-camps',
-          element: <ManageCamps></ManageCamps>
+          element: <OrganizerRoute><ManageCamps></ManageCamps></OrganizerRoute>
         },
         {
           path: 'add-upcoming-camps',
-          element: <AddUpcomingCamps></AddUpcomingCamps>
+          element: <OrganizerRoute><AddUpcomingCamps></AddUpcomingCamps></OrganizerRoute>
         },
         {
           path: 'update-camp/:id',
-          element: <UpdateCamp></UpdateCamp>,
+          element: <OrganizerRoute><UpdateCamp></UpdateCamp></OrganizerRoute>,
           loader: ({params}) => fetch(`http://localhost:5000/camps/${params.id}`)
         },
         {
           path: 'manage-registered-camps',
-          element:<PrivateRoute><RegisteredCamps></RegisteredCamps></PrivateRoute>
+          element:<OrganizerRoute><RegisteredCamps></RegisteredCamps></OrganizerRoute>
+        },
+        {
+          path: 'professionals-interest',
+          element: <OrganizerRoute><ProfessionalsInterests></ProfessionalsInterests></OrganizerRoute>
         },
         // Perticipents====================
         {
@@ -105,12 +112,13 @@ import AcceptedCamp from "../ProfessionalDashboard/ProfileManage/AcceptedCamps";
         },
         {
           path: 'professionals-profile',
-          element: <PrivateRoute><ProfessionalProfile></ProfessionalProfile></PrivateRoute>
+          element: <ProfessionalRoute><ProfessionalProfile></ProfessionalProfile></ProfessionalRoute>
         },
         {
           path: 'accepted-camps',
-          element: <PrivateRoute><AcceptedCamp></AcceptedCamp></PrivateRoute>
-        }
+          element: <ProfessionalRoute><AcceptedCamp></AcceptedCamp></ProfessionalRoute>
+        },
+        
       ]
     }
   ]);

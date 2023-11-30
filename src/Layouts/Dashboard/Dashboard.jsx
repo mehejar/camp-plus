@@ -44,7 +44,7 @@ const Dashboard = () => {
 
                         <li><NavLink to="/dashboard/manage-registered-camps"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><MdEditDocument className="text-2xl"></MdEditDocument>Registered Camps</button></NavLink></li>
 
-                        <li><NavLink to="/dashboard/manage-registered-camps"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><FaQuestionCircle className="text-2xl"></FaQuestionCircle>Professionals Interests</button></NavLink></li>
+                        <li><NavLink to="/dashboard/professionals-interest"><button className=" w-full text-gray-500 rounded-xl py-2 px-3 hover:bg-theme-bg text-xl flex my-2 gap-3 items-center bg-white text-left"><FaQuestionCircle className="text-2xl"></FaQuestionCircle>Professionals Interests</button></NavLink></li>
 
                         <div className="divider"></div>
 

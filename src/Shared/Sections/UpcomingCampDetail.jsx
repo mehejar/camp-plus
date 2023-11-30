@@ -117,7 +117,7 @@ const UpcomingCampDetails = () => {
                     <h2 className="text-5xl py-2 font-bold ">{name}</h2>
 
                     <h2 className="text-lg font-semibold flex items-center gap-2 my-2">Professionals Attend: {professionals_attend}</h2>
-                    <p className="text-small-text"><span className="font-semibold text-black">Benefits of Medical Camps:</span> Accessibility: Medical camps bring healthcare services closer to communities that may have limited access to hospitals or clinics due to geographical, financial, or other constraints.
+                    <p className="text-small-text"><span className="font-semibold text-black">Benefits of Medical Camps:</span> {}
 
                         Health Awareness: These camps often include educational sessions and workshops to raise awareness about various health issues, preventive measures, and healthy lifestyle practices.
 
