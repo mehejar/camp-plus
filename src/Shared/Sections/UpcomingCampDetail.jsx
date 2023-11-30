@@ -130,7 +130,7 @@ const UpcomingCampDetails = () => {
                     {!isProfessional ?
                         <button onClick={() => document.getElementById('my_modal_4').showModal()} className="py-2 mt-8 font-semibold px-4 rounded-md text-white bg-theme-color flex items-center gap-2">Join Camp<FaRegArrowAltCircleRight></FaRegArrowAltCircleRight></button> :
 
-                        <button className="py-2 mt-8 font-semibold px-4 rounded-md text-white bg-theme-color flex items-center gap-2" onClick={() => document.getElementById('my_modal_3').showModal()}>Attend As A Health Care Professional</button>}
+                        <button className="py-2 mt-8 font-semibold px-4 rounded-md text-white bg-theme-color flex items-center gap-2" onClick={() => document.getElementById('my_modal_3').showModal()}>Interested Upcoming</button>}
 
                 </div>
 
